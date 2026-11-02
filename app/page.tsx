@@ -6,7 +6,7 @@ import { useState } from "react";
 const tools = [
   { name: "Percentage Calculator", category: "Mathematics", description: "Calculate percentages instantly.", available: true },
   { name: "Percentage Change", category: "Mathematics", description: "Work out increases and decreases.", available: false },
-  { name: "VAT Calculator", category: "Finance", description: "Add or remove VAT.", available: false },
+  { name: "VAT Calculator", category: "Finance", description: "Add or remove VAT.", available: true },
   { name: "Compound Interest", category: "Finance", description: "Explore savings and investment growth.", available: false },
   { name: "Ohm's Law", category: "Electrical", description: "Calculate voltage, current and resistance.", available: false },
   { name: "Voltage Drop", category: "Electrical", description: "Estimate electrical voltage drop.", available: false },
@@ -114,7 +114,9 @@ export default function Home() {
               <p className="text-sm text-slate-500 mt-2">{tool.description}</p>
               <p className={`text-xs font-semibold mt-4 ${tool.available ? "text-green-700" : "text-slate-400"}`}>
                 {tool.available ? (
-  <a href="#percentage-calculator" className="hover:underline">
+  
+<a href={tool.name === "VAT Calculator" ? "/vat-calculator" : "#percentage-calculator"} className="hover:underline">
+
     Available now ↓
   </a>
 ) : (
