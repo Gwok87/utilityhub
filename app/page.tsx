@@ -115,7 +115,7 @@ export default function Home() {
               <p className={`text-xs font-semibold mt-4 ${tool.available ? "text-green-700" : "text-slate-400"}`}>
                 {tool.available ? (
   
-<a href={tool.name === "VAT Calculator" ? "/vat-calculator" : "#percentage-calculator"} className="hover:underline">
+<a href={tool.name === "VAT Calculator" ? "/vat-calculator" : tool.name === "Ohm's Law" ? "/ohms-law" : "#percentage-calculator"} className="hover:underline">
 
     Available now ↓
   </a>
